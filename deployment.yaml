@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myapps  
+  name: myazureaks
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: myapps
+      app: myazureaks
   template:
     metadata:
       labels:
-        app: myapps
+        app: myazureaks
     spec:
       containers:
-        - name: myapps
+        - name: myazureaks
           image: sarvesh2301/docker2218-app:latest
           ports:
             - containerPort: 80
