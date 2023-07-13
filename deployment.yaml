@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: myazureaks
+  namespace: sarvesh
+  labels:
+   app: myazureaks
 spec:
   replicas: 2
   selector:
@@ -14,6 +17,9 @@ spec:
     spec:
       containers:
         - name: myazureaks
-          image: sarvesh2301/docker2218-app:latest
+          image: sarveshcontainer.azurecr.io/docker2218-app:latest
           ports:
-            - containerPort: 80
+            - containerPort: 5000
+      imagePullSecrets:
+      - name: ram
+      
