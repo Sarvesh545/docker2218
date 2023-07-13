@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: my-service
+  name: dotnetdemo
+  namespace: sarvesh
 spec:
   selector:
-    app: myazureaks
+    app: dotnetdemo
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 80
       targetPort: 5000
-  type: LoadBalancer
